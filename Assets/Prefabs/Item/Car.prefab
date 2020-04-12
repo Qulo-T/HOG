@@ -1,0 +1,122 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &508556475345172837
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4817597597387680823}
+  - component: {fileID: 6727715697658961196}
+  m_Layer: 0
+  m_Name: Car
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4817597597387680823
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 508556475345172837}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 4, y: 4, z: 4}
+  m_Children:
+  - {fileID: 9050618723783844747}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6727715697658961196
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 508556475345172837}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ebaaeeb1fad051946a894a041dd41f12, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  small: 0
+--- !u!1001 &4098545077448280209
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 4817597597387680823}
+    m_Modifications:
+    - target: {fileID: -4216859302048453862, guid: 7574ce860a92f604fbae42ee58fd12ba,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 7574ce860a92f604fbae42ee58fd12ba,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.00263
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 7574ce860a92f604fbae42ee58fd12ba,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 7574ce860a92f604fbae42ee58fd12ba,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 7574ce860a92f604fbae42ee58fd12ba,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.3152261
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 7574ce860a92f604fbae42ee58fd12ba,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 7574ce860a92f604fbae42ee58fd12ba,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.94901663
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 7574ce860a92f604fbae42ee58fd12ba,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 7574ce860a92f604fbae42ee58fd12ba,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 7574ce860a92f604fbae42ee58fd12ba,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -36.749
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 7574ce860a92f604fbae42ee58fd12ba,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 7574ce860a92f604fbae42ee58fd12ba,
+        type: 3}
+      propertyPath: m_Name
+      value: Car 2013 McLaren P1 Forza Horizon N260419
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 7574ce860a92f604fbae42ee58fd12ba, type: 3}
+--- !u!4 &9050618723783844747 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: 7574ce860a92f604fbae42ee58fd12ba,
+    type: 3}
+  m_PrefabInstance: {fileID: 4098545077448280209}
+  m_PrefabAsset: {fileID: 0}
