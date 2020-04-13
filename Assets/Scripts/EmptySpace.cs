@@ -9,7 +9,8 @@ public class EmptySpace : MonoBehaviour
         Floor = 0,
         WallX = 1,
         WallZ = 2,
-        Roof = 3
+        Roof = 3,
+        Box = 4
     }
     
 
@@ -34,4 +35,5 @@ public class EmptySpace : MonoBehaviour
 
         return angle;
     }
+    public Sides Side { get { return side; } }
 }
