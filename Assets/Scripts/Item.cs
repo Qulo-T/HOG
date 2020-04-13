@@ -4,19 +4,23 @@ using UnityEngine;
 
 public class Item : MonoBehaviour
 {
-    [SerializeField] private bool small;
-    private EmptySpace space;
+    [SerializeField] private bool floor;
+    [SerializeField] private bool wall;
+    [SerializeField] private bool roof;
+    [SerializeField] private bool box;
 
-    public void Start()
-    {
-        
-    }
+    private EmptySpace _space;
 
     public void ItemRotate()
     {
-        space = transform.parent.GetComponent<EmptySpace>();
-        Vector3 angle = space.GetSideRotation();
-        //transform.Rotate(angle);
+        _space = transform.parent.GetComponent<EmptySpace>();
+        Vector3 angle = _space.GetSideRotation();        
         transform.rotation = Quaternion.Euler(angle);
     }
+
+    public bool Floor { get {return floor; } }
+    public bool Wall { get { return wall; } }
+    public bool Roof { get { return roof; } }
+    public bool Box { get { return box; } }
+
 }
