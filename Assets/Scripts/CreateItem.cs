@@ -5,47 +5,55 @@ using UnityEngine;
 public class CreateItem : MonoBehaviour
 {
     private List<GameObject> emptySpaces;
-    private List<GameObject> items;
+    private List<GameObject> prefabs;
     private int itemsCount; //параметр К из ТЗ
-    public List<GameObject> levelItems { get; }
+    public List<GameObject> levelItems { get; private set; }
 
     private GameObject currentSpace;
 
     public void Init(List<GameObject> spaces, List<GameObject> allItems, int itemsCountMax)
     {
+        levelItems = new List<GameObject>();
+        prefabs = new List<GameObject>(allItems); //клонируем
+
         emptySpaces = spaces;
-        items = allItems;
         itemsCount = itemsCountMax;
+
+        if (itemsCount > emptySpaces.Count)
+        {
+            itemsCount = emptySpaces.Count;
+        }
+
         Fill();
 
     }
     private void Fill()
-    {        
+    {
         for (int i = 0; i < itemsCount; i++)
         {
-            currentSpace = emptySpaces[i];
-            SearchItem();
+                currentSpace = emptySpaces[i];
+                SearchItem();
         }
     }
 
     private void SearchItem()
     {
-        for (int i = 0; i < items.Count; i++)
+        for (int i = 0; i < prefabs.Count; i++)
         {
-            if (TypeCompare(items[i]))
+            if (TypeCompare(prefabs[i]))
             {
-                Create(items[i]);
-                levelItems.Add(items[i]);
-                items.RemoveAt(i);
+                Create(prefabs[i]);
+                levelItems.Add(prefabs[i]);
+                prefabs.RemoveAt(i);
                 break;
             }
         }
     }
 
-    private bool TypeCompare(GameObject item)
+    private bool TypeCompare(GameObject prefab)
     {
         EmptySpace.Sides side = currentSpace.GetComponent<EmptySpace>().Side;
-        Item itemScr = item.GetComponent<Item>();
+        Item itemScr = prefab.GetComponent<Item>();
 
         if (side == EmptySpace.Sides.Floor && itemScr.Floor)
         {           
@@ -69,9 +77,16 @@ public class CreateItem : MonoBehaviour
         {
                 return true;
         }
-
+       
         return false;
     }
 
-    private void Create(GameObject item) { }
+    private void Create(GameObject prefab) 
+    {
+        GameObject item = Instantiate(prefab);
+        item.transform.SetParent(currentSpace.transform);
+        item.transform.position = currentSpace.transform.position;
+
+        item.GetComponent<Item>().ItemRotate();
+    }
 }
