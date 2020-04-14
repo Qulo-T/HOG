@@ -25,7 +25,6 @@ public class CreateItem : MonoBehaviour
         }
 
         Fill();
-
     }
     private void Fill()
     {
