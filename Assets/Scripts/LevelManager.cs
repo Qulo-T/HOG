@@ -4,23 +4,44 @@ using UnityEngine;
 
 public class LevelManager : MonoBehaviour
 {
-    [SerializeField] private List<GameObject> allItems;
-    [SerializeField] private GameObject spaceBox;
+    [SerializeField] private UImanager uiManager;
 
-    [SerializeField] private int questItemCount; //кол-во для поиска
-    [SerializeField] private int maxItem; //параметр К в ТЗ
+    private List<GameObject> itemsPull;
+
+    private int questItemCount; //кол-во для поиска
+    private int maxItem; //параметр К в ТЗ
 
     private List<GameObject> spaces;
-    public List<GameObject> levelItems;
+    private List<GameObject> levelItems;
+    public List<GameObject> questItem { get; private set; }
     
     void Start()
     {
-        spaces = GLtools.GetChild(spaceBox);
-        spaces = GLtools.Shuffle(spaces);
-
-        allItems = GLtools.Shuffle(allItems);
-
-        GetComponent<CreateItem>().Init(spaces, allItems, maxItem);
+        questItem = new List<GameObject>();
+        spaces = GameData.GetLvlSpaces;
+        itemsPull = GameData.GetLvlItems;
+        maxItem = GameData.GetItemsCount;
+        questItemCount = GameData.GetQuestCount;
+        
+        GetComponent<CreateItem>().Init(spaces, itemsPull, maxItem);
         levelItems = GetComponent<CreateItem>().levelItems;
+        Quest();
     }
+
+    private void Quest()
+    {
+        if (questItemCount > levelItems.Count)
+        {
+            questItemCount = levelItems.Count;
+        }
+
+        levelItems.Reverse(); //согласно ТЗ, последние 3 (questItemCount) - квест
+       
+        for (int i = 0; i < questItemCount; i++)
+        {            
+            questItem.Add(levelItems[i]);
+        }
+
+    }
+
 }

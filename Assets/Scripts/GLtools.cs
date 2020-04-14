@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public  class GLtools : MonoBehaviour
+public class GLtools : MonoBehaviour
 {
     public static List<T> Shuffle<T>(List<T> list)
     {
