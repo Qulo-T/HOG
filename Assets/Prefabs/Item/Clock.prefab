@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4999330484292448867}
   - component: {fileID: 4627793333184842756}
   - component: {fileID: 4808993098081371922}
+  - component: {fileID: 575183901320504969}
   m_Layer: 0
   m_Name: Clock
   m_TagString: Untagged
@@ -62,6 +63,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc8e592f520e017448d0aeac3d93afd1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  quest: 0
+--- !u!65 &575183901320504969
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7161959586353130634}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.04872483, y: 0.009733215, z: 0.052385144}
+  m_Center: {x: -0.0034321623, y: 0.0054209232, z: 0.0071599786}
 --- !u!1001 &6857102889326545360
 PrefabInstance:
   m_ObjectHideFlags: 0

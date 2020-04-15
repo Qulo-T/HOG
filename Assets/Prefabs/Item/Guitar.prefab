@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6746558782169788633}
   - component: {fileID: 2136211445227765000}
   - component: {fileID: -6026059475618422021}
+  - component: {fileID: 7792948144495627735}
   m_Layer: 0
   m_Name: Guitar
   m_TagString: Untagged
@@ -62,6 +63,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc8e592f520e017448d0aeac3d93afd1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  quest: 0
+--- !u!65 &7792948144495627735
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2567222406527277564}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.17568323, y: 0.02164501, z: 0.2126542}
+  m_Center: {x: 0.0031920224, y: 0.012283772, z: -0.008296058}
 --- !u!1001 &4343196372534566765
 PrefabInstance:
   m_ObjectHideFlags: 0

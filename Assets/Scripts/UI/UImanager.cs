@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(UIbottom))]
+[RequireComponent(typeof(UIbottom),typeof(UItop))]
 public class UImanager : MonoBehaviour
 {
     public static UImanager Instans { get; private set; }

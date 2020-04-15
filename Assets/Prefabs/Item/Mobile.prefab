@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 593686755043187904}
   - component: {fileID: 635784647311538542}
   - component: {fileID: 2505819339192949370}
+  - component: {fileID: 121982744733621820}
   m_Layer: 0
   m_Name: Mobile
   m_TagString: Untagged
@@ -62,6 +63,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc8e592f520e017448d0aeac3d93afd1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  quest: 0
+--- !u!65 &121982744733621820
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5574593567577236278}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.0067657083, y: 0.0013379566, z: 0.014293954}
+  m_Center: {x: 0.00012325868, y: 0.0005553756, z: 0.000044878572}
 --- !u!1001 &3704551637307486290
 PrefabInstance:
   m_ObjectHideFlags: 0
