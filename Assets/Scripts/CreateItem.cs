@@ -5,30 +5,30 @@ using UnityEngine;
 public class CreateItem : MonoBehaviour
 {
     private List<GameObject> emptySpaces;
-    private List<GameObject> prefabs;
-    private int itemsCount; //параметр К из ТЗ
+    private List<GameObject> itemsPrefab;
+    private int maxItem; //параметр К из ТЗ
     public List<GameObject> levelItems { get; private set; }
 
     private GameObject currentSpace;
 
-    public void Init(List<GameObject> spaces, List<GameObject> allItems, int itemsCountMax)
+    public void Init()
     {
         levelItems = new List<GameObject>();
-        prefabs = new List<GameObject>(allItems); //клонируем
 
-        emptySpaces = spaces;
-        itemsCount = itemsCountMax;
+        itemsPrefab = new List<GameObject>(LevelManager.Instance.itemsPrefab); //клонируем
+        emptySpaces = LevelManager.Instance.spaces;
+        maxItem = LevelManager.Instance.maxItem;
 
-        if (itemsCount > emptySpaces.Count)
+        if (maxItem > emptySpaces.Count)
         {
-            itemsCount = emptySpaces.Count;
+            maxItem = emptySpaces.Count;
         }
 
         Fill();
     }
     private void Fill()
     {
-        for (int i = 0; i < itemsCount; i++)
+        for (int i = 0; i < maxItem; i++)
         {
                 currentSpace = emptySpaces[i];
                 SearchItem();
@@ -37,13 +37,13 @@ public class CreateItem : MonoBehaviour
 
     private void SearchItem()
     {
-        for (int i = 0; i < prefabs.Count; i++)
+        for (int i = 0; i < itemsPrefab.Count; i++)
         {
-            if (TypeCompare(prefabs[i]))
+            if (TypeCompare(itemsPrefab[i]))
             {
-                Create(prefabs[i]);
-                levelItems.Add(prefabs[i]);
-                prefabs.RemoveAt(i);
+                Create(itemsPrefab[i]);
+                levelItems.Add(itemsPrefab[i]);
+                itemsPrefab.RemoveAt(i);
                 break;
             }
         }

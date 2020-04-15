@@ -2,12 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(UIbottom))]
 public class UImanager : MonoBehaviour
 {
-    [SerializeField] private GameObject levelManager;
-    [SerializeField] private GameObject player;
+    public static UImanager Instans { get; private set; }
+
+    private void Awake()
+    {
+        Instans = this;
+    }
     public void Init()
     {
-        GetComponent<UIbottom>().Init(levelManager,player);
+        GetComponent<UIbottom>().Init();
     }
 }

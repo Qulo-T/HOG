@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(ItemMouseClick))]
 public class Item : MonoBehaviour
 {
+    [SerializeField] private string _name;
     [SerializeField] private bool floor;
     [SerializeField] private bool wall;
     [SerializeField] private bool roof;
@@ -18,6 +20,7 @@ public class Item : MonoBehaviour
         transform.rotation = Quaternion.Euler(angle);
     }
 
+    public string Name { get { return _name; } }
     public bool Floor { get {return floor; } }
     public bool Wall { get { return wall; } }
     public bool Roof { get { return roof; } }

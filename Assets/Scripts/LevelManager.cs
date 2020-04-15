@@ -2,30 +2,39 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(CreateItem))]
+
 public class LevelManager : MonoBehaviour
 {
-    [SerializeField] private UImanager uiManager;
+    public static LevelManager Instance { get; private set; }
 
-    private List<GameObject> itemsPull;
-
-    private int questItemCount; //кол-во для поиска
-    private int maxItem; //параметр К в ТЗ
-
-    private List<GameObject> spaces;
-    private List<GameObject> levelItems;
+    public List<GameObject> itemsPrefab { get; private set; }
+    public List<GameObject> spaces { get; private set; }
     public List<GameObject> questItem { get; private set; }
-    
+    public int maxItem { get; private set; } //параметр К в ТЗ
+
+    private List<GameObject> levelItems;
+    private int questItemCount; //кол-во для поиска
+
+
+    private void Awake()
+    {
+        Instance = this;
+    }
     void Start()
     {
         questItem = new List<GameObject>();
+
         spaces = GameData.GetLvlSpaces;
-        itemsPull = GameData.GetLvlItems;
+        itemsPrefab = GameData.GetLvlItems;
         maxItem = GameData.GetItemsCount;
         questItemCount = GameData.GetQuestCount;
         
-        GetComponent<CreateItem>().Init(spaces, itemsPull, maxItem);
+        GetComponent<CreateItem>().Init();
+
         levelItems = GetComponent<CreateItem>().levelItems;
         Quest();
+        UImanager.Instans.Init();
     }
 
     private void Quest()

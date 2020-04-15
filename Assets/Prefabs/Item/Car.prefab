@@ -10,6 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4817597597387680823}
   - component: {fileID: 6727715697658961196}
+  - component: {fileID: -6015567620470416168}
+  - component: {fileID: 2650329452543996733}
   m_Layer: 0
   m_Name: Car
   m_TagString: Untagged
@@ -44,10 +46,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ebaaeeb1fad051946a894a041dd41f12, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _name: Car
   floor: 1
   wall: 0
   roof: 0
   box: 1
+--- !u!114 &-6015567620470416168
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 508556475345172837}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc8e592f520e017448d0aeac3d93afd1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  quest: 0
+--- !u!65 &2650329452543996733
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 508556475345172837}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.011245061, y: 0.0051828623, z: 0.016835973}
+  m_Center: {x: -0.000854129, y: 0.0021764114, z: -0.000324592}
 --- !u!1001 &4098545077448280209
 PrefabInstance:
   m_ObjectHideFlags: 0
