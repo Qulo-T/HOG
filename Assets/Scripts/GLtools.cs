@@ -4,6 +4,18 @@ using UnityEngine;
 
 public class GLtools : MonoBehaviour
 {
+    public static void Pause() { }
+    public static void GameOver(bool win) 
+    {
+        if (win)
+        {
+            Debug.Log("winner");
+        }
+        else
+        {
+            Debug.Log("loose");
+        }
+    }
     public static List<T> Shuffle<T>(List<T> list)
     {
         List<T> result = list;

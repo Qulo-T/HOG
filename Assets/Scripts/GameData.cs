@@ -11,7 +11,7 @@ public class GameData : MonoBehaviour
     [SerializeField, Tooltip("first = 0")] private int startLevel;
     [SerializeField] private GameObject[] levelsSpace;
     [SerializeField] private GameObject[] levelsItem;
-    [SerializeField] private int[] lvlTimerSEC; //cfg
+    [SerializeField] private float[] lvlTimerSEC; //cfg
     [SerializeField] private int[] lvlItemsCount; //cfg
     [SerializeField] private int[] lvlQuestCount; //cfg
     [SerializeField] private int[] lvlEnergyStart; //cfg
@@ -19,19 +19,21 @@ public class GameData : MonoBehaviour
     [Header("Player")]
     [SerializeField] private int plHintMax; //cfg
     [SerializeField] private int plEnergyMax; //cfg
+    [SerializeField] private float penaltyCount; //cfg
 
     private static int _startLevel;
     public static int currentLevel { get; private set; }
 
     private static GameObject[] _levelsSpace;
     private static GameObject[] _levelsItem;
-    private static int[] _lvlTimerSEC;
+    private static float[] _lvlTimerSEC;
     private static int[] _lvlItemsCount; //max item to be placed. Параметр К в ТЗ
     private static int[] _lvlQuestCount; //items to search, count. 
     private static int[] _lvlEnergyStart;
 
     public static int _plHintMax { get; private set; }
     public static int _plEnergyMax { get; private set; }
+    public static float _penaltyCount { get; private set; }
 
     void Awake()
     {
@@ -59,6 +61,7 @@ public class GameData : MonoBehaviour
         _lvlEnergyStart = lvlEnergyStart;
         _plHintMax = plHintMax;
         _plEnergyMax = plEnergyMax;
+        _penaltyCount = penaltyCount;
     }
     private void UseConfig()
     {
@@ -94,7 +97,7 @@ public class GameData : MonoBehaviour
             return GLtools.Shuffle(result);
         }
     }
-    public static int GetTimer { get { return _lvlTimerSEC[currentLevel]; } }
+    public static float GetTimer { get { return _lvlTimerSEC[currentLevel]; } }
     public static int GetItemsCount { get { return _lvlItemsCount[currentLevel]; } }
     public static int GetQuestCount { get { return _lvlQuestCount[currentLevel]; } }
     public static int GetEnergyStart { get { return _lvlEnergyStart[currentLevel]; } }

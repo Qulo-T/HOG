@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class ItemMouseClick : MonoBehaviour
 {
-    private static bool falseClick;
+    public static bool falseClick;
     [HideInInspector] public bool quest;
-    private void Awake()
+    void Awake()
     {
         falseClick = false;
         quest = false;
@@ -16,21 +16,28 @@ public class ItemMouseClick : MonoBehaviour
     {
         if (quest)
         {
-            //удаляем из levelManager.instance.questItem
-            //заполняем заного UI questpanel
-            //проверяем "победа?"
+            falseClick = false;
+
+            LevelManager.Instance.RemoveQuestItem(gameObject);
             
+            UImanager.Instance.uibottom.ClearQuestPanel();
+            UImanager.Instance.uibottom.FillQuestPanel();
+
+            Debug.Log("клик квест");
+            Destroy(gameObject);
         }
         else
         {
+            Debug.Log("клик");
             if (!falseClick)
             {
                 falseClick = true;
             }
             else
             {
-                //минус 10 сек
+                UImanager.Instance.uitop.Penalty();
                 falseClick = false;
+                Debug.Log("штраф");
             }
         }
 

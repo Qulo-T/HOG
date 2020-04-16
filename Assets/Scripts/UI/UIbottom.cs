@@ -17,11 +17,9 @@ public class UIbottom : MonoBehaviour
         player = Player.Instance;
 
         questItem = levelManager.questItem;
-
-        FillQuestanel();
-
     }
-    private void FillQuestanel()
+
+    public void FillQuestPanel()
     {
         for (int i = 0; i < questItem.Count; i++)
         {
@@ -29,7 +27,14 @@ public class UIbottom : MonoBehaviour
             itemText.transform.SetParent(questPanel.transform);
             itemText.GetComponent<Text>().text = questItem[i].GetComponent<Item>().Name;
         }
-
+    }
+    public void ClearQuestPanel()
+    {
+        int count = questPanel.transform.childCount;
+        for (int i = 0; i < count; i++)
+        {
+            Destroy(questPanel.transform.GetChild(i).gameObject);
+        }
     }
 
 

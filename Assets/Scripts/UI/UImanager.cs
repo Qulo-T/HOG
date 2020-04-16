@@ -2,17 +2,26 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(UIbottom),typeof(UItop))]
+[RequireComponent(typeof(UIbottom), typeof(UItop))]
 public class UImanager : MonoBehaviour
 {
-    public static UImanager Instans { get; private set; }
+    public static UImanager Instance { get; private set; }
+    public UIbottom uibottom { get; private set; }
+    public UItop uitop { get; private set; }
 
     private void Awake()
     {
-        Instans = this;
+        Instance = this;
     }
+
     public void Init()
     {
-        GetComponent<UIbottom>().Init();
+        uibottom = GetComponent<UIbottom>();
+        uitop = GetComponent<UItop>();
+
+        uibottom.Init();
+        uibottom.FillQuestPanel();
+
+        uitop.SetHint();
     }
 }

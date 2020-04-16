@@ -13,6 +13,7 @@ public class LevelManager : MonoBehaviour
     public List<GameObject> questItem { get; private set; }
     public int maxItem { get; private set; } //параметр К в ТЗ
 
+    private CreateItem createItem;
     private List<GameObject> levelItems;
     private int questItemCount; //кол-во для поиска
 
@@ -29,12 +30,15 @@ public class LevelManager : MonoBehaviour
         itemsPrefab = GameData.GetLvlItems;
         maxItem = GameData.GetItemsCount;
         questItemCount = GameData.GetQuestCount;
+        createItem = GetComponent<CreateItem>();
         
-        GetComponent<CreateItem>().Init();
+        createItem.Init();
+        createItem.Fill();
 
-        levelItems = GetComponent<CreateItem>().levelItems;
+        levelItems = createItem.levelItems;
         Quest();
-        UImanager.Instans.Init();
+     //   Player.Instance.Init();
+        UImanager.Instance.Init();
     }
 
     private void Quest()
@@ -47,10 +51,19 @@ public class LevelManager : MonoBehaviour
         levelItems.Reverse(); //согласно ТЗ, последние 3 (questItemCount) - квест
        
         for (int i = 0; i < questItemCount; i++)
-        {            
+        {
+            levelItems[i].GetComponent<ItemMouseClick>().quest = true;
             questItem.Add(levelItems[i]);
         }
 
+    }
+    public void RemoveQuestItem(GameObject item)
+    {
+        questItem.Remove(item);
+        if (questItem.Count < 1)
+        {
+            GLtools.GameOver(true);
+        }
     }
 
 }

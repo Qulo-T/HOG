@@ -22,11 +22,9 @@ public class CreateItem : MonoBehaviour
         if (maxItem > emptySpaces.Count)
         {
             maxItem = emptySpaces.Count;
-        }
-
-        Fill();
+        }      
     }
-    private void Fill()
+    public void Fill()
     {
         for (int i = 0; i < maxItem; i++)
         {
@@ -41,8 +39,7 @@ public class CreateItem : MonoBehaviour
         {
             if (TypeCompare(itemsPrefab[i]))
             {
-                Create(itemsPrefab[i]);
-                levelItems.Add(itemsPrefab[i]);
+                Create(itemsPrefab[i]);                
                 itemsPrefab.RemoveAt(i);
                 break;
             }
@@ -87,5 +84,7 @@ public class CreateItem : MonoBehaviour
         item.transform.position = currentSpace.transform.position;
 
         item.GetComponent<Item>().ItemRotate();
+
+        levelItems.Add(item);
     }
 }

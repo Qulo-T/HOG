@@ -515,12 +515,14 @@ MonoBehaviour:
   - {fileID: 239161481}
   levelsItem:
   - {fileID: 1888744836}
-  lvlTimerSEC: b4000000
+  lvlTimerSEC:
+  - 180
   lvlItemsCount: 0a000000
   lvlQuestCount: 03000000
   lvlEnergyStart: 
   plHintMax: 2
   plEnergyMax: 100
+  penaltyCount: 10
 --- !u!1 &211229058
 GameObject:
   m_ObjectHideFlags: 0
@@ -3644,6 +3646,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1936055417}
+  - component: {fileID: 1936055418}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -3665,6 +3668,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1936055418
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1936055416}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef8f9c9eac99c044a8af2fdefe776bf7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2023818874
 GameObject:
   m_ObjectHideFlags: 0
@@ -4146,6 +4161,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e01fe504d8bc66646957a1905a4eeb71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  timerText: {fileID: 70562338}
+  hintText: {fileID: 1652547734}
 --- !u!1 &2113513551
 GameObject:
   m_ObjectHideFlags: 0
