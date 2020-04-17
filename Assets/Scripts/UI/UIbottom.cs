@@ -9,17 +9,10 @@ public class UIbottom : MonoBehaviour
     [SerializeField] private GameObject textPrefab;
     [SerializeField] private GameObject questPanel;
 
-    private LevelManager levelManager;
-    private Player player;
     private List<GameObject> questItem;
-    private void Start()
-    {
-        levelManager = LevelManager.Instance;
-        player = Player.Instance;
-    }
     public void Init()
     {
-        questItem = levelManager.questItem;
+        questItem = LevelManager.Instance.questItem;
     }
 
     public void FillQuestPanel()

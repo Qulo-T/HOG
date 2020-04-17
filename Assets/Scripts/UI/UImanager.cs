@@ -7,6 +7,7 @@ public class UImanager : MonoBehaviour
     public static UImanager Instance { get; private set; }
     [SerializeField] private UIbottom uibottom;
     [SerializeField] private UItop uitop;
+    [SerializeField] private UIMenuButton uiMenu;
 
     private void Awake()
     {
@@ -23,4 +24,5 @@ public class UImanager : MonoBehaviour
 
     public UIbottom UIBottom { get { return uibottom; } }
     public UItop UITop { get { return uitop; } }
+    public UIMenuButton UIMenu { get { return uiMenu; } }
 }

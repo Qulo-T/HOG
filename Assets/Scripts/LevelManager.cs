@@ -17,13 +17,15 @@ public class LevelManager : MonoBehaviour
     private List<GameObject> levelItems;
     private int questItemCount; //кол-во для поиска
 
-
+    public bool pause;
     private void Awake()
     {
         Instance = this;
     }
     void Start()
     {
+        pause = false;
+
         questItem = new List<GameObject>();
 
         spaces = GameData.Instance.GetLvlSpaces;
@@ -31,7 +33,11 @@ public class LevelManager : MonoBehaviour
         maxItem = GameData.Instance.GetItemsCount;
         questItemCount = GameData.Instance.GetQuestCount;
         createItem = GetComponent<CreateItem>();
-        
+
+        Run();
+    }
+    public void Run()
+    {
         createItem.Init();
         createItem.Fill();
 
@@ -40,7 +46,6 @@ public class LevelManager : MonoBehaviour
 
         UImanager.Instance.Init();
     }
-
     private void Quest()
     {
         if (questItemCount > levelItems.Count)
@@ -49,7 +54,7 @@ public class LevelManager : MonoBehaviour
         }
 
         levelItems.Reverse(); //согласно ТЗ, последние 3 (questItemCount) - квест
-       
+
         for (int i = 0; i < questItemCount; i++)
         {
             levelItems[i].GetComponent<ItemMouseClick>().quest = true;
@@ -62,7 +67,27 @@ public class LevelManager : MonoBehaviour
         questItem.Remove(item);
         if (questItem.Count < 1)
         {
-            GLtools.GameOver(true);
+            GameOver(true);
+        }
+    }
+    public void Restart() 
+    {
+        for (int i = 0; i < levelItems.Count; i++)
+        {
+            Destroy(levelItems[i]);
+        }
+        questItem.Clear();
+        Start();
+    }
+    public void GameOver(bool win)
+    {
+        if (win)
+        {
+            UImanager.Instance.UIMenu.GameOver(true);
+        }
+        else
+        {
+            UImanager.Instance.UIMenu.GameOver(false);
         }
     }
 

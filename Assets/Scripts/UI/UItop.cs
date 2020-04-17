@@ -17,15 +17,29 @@ public class UItop : MonoBehaviour
     }
 
     private void Update()
-    {        
-        int minute = (int) time / 60;
-        int seconds = (int) time % 60;
-
-        string txt = string.Format("{0:0}:{1:00}", minute, seconds);
-        timerText.text = txt;
-        time -= Time.deltaTime;
+    {
+        if (time > 0)
+        {
+            Timer();
+        }
+        else
+        {
+            time = 0;
+            LevelManager.Instance.GameOver(false);
+        }
     }
+    public void Timer()
+    {
+        if (!LevelManager.Instance.pause)
+        {
+            int minute = (int)time / 60;
+            int seconds = (int)time % 60;
 
+            string txt = string.Format("{0:0}:{1:00}", minute, seconds);
+            timerText.text = txt;
+            time -= Time.deltaTime;
+        }
+    }
     public void SetHint()
     {
         hintText.text = "Hints: " + Player.Instance.hintCount;
@@ -34,5 +48,9 @@ public class UItop : MonoBehaviour
     {
         time -= penaltyCount;
         //создание текст префаба
+    }
+    public void Restart()
+    {
+        time = GameData.Instance.GetTimer;
     }
 }

@@ -17,7 +17,7 @@ public class Player : MonoBehaviour
         Instance = this;
 
         hintMax = GameData.Instance.GetPlHintMax;
-        hintCount = hintMax;
+        SetHints();
 
         energyMax = GameData.Instance.GetPlEnergyMax;
         energyCount = energyMax;
@@ -31,6 +31,10 @@ public class Player : MonoBehaviour
     public void DecreaseHint()
     {
         hintCount--;
+    }
+    public void SetHints()
+    {
+        hintCount = hintMax;
     }
 
 
