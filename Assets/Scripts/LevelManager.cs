@@ -26,10 +26,10 @@ public class LevelManager : MonoBehaviour
     {
         questItem = new List<GameObject>();
 
-        spaces = GameData.GetLvlSpaces;
-        itemsPrefab = GameData.GetLvlItems;
-        maxItem = GameData.GetItemsCount;
-        questItemCount = GameData.GetQuestCount;
+        spaces = GameData.Instance.GetLvlSpaces;
+        itemsPrefab = GameData.Instance.GetLvlItems;
+        maxItem = GameData.Instance.GetItemsCount;
+        questItemCount = GameData.Instance.GetQuestCount;
         createItem = GetComponent<CreateItem>();
         
         createItem.Init();

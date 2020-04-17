@@ -519,7 +519,7 @@ MonoBehaviour:
   - 180
   lvlItemsCount: 0a000000
   lvlQuestCount: 03000000
-  lvlEnergyStart: 
+  lvlEnergyStart: 07000000
   plHintMax: 2
   plEnergyMax: 100
   penaltyCount: 10

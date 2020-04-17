@@ -18,10 +18,10 @@ public class Player : MonoBehaviour
     }
     public void Start()
     {
-        hintMax = GameData._plHintMax;
+        hintMax = GameData.Instance.GetPlHintMax;
         hintCount = hintMax;
 
-        energyMax = GameData._plEnergyMax;
+        energyMax = GameData.Instance.GetPlEnergyMax;
         energyCount = energyMax;
     }
 

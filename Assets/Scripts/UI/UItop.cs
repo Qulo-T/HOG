@@ -12,8 +12,8 @@ public class UItop : MonoBehaviour
     private float penaltyCount;
     public void Start()
     {
-        time = GameData.GetTimer;
-        penaltyCount = GameData._penaltyCount;
+        time = GameData.Instance.GetTimer;
+        penaltyCount = GameData.Instance.GetPenaltyCount;
     }
 
     private void Update()
