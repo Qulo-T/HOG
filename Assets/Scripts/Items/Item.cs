@@ -19,6 +19,16 @@ public class Item : MonoBehaviour
         Vector3 angle = _space.GetSideRotation();        
         transform.rotation = Quaternion.Euler(angle);
     }
+    public void BackLight()
+    {
+        GetComponent<Light>().range = 0.1f;
+        StartCoroutine(StartLight());
+    }
+    IEnumerator StartLight()
+    {       
+        yield return new WaitForSeconds(3f);
+        GetComponent<Light>().range = 0;
+    }
 
     public string Name { get { return _name; } }
     public bool Floor { get {return floor; } }

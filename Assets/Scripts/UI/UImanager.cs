@@ -2,12 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(UIbottom), typeof(UItop))]
 public class UImanager : MonoBehaviour
 {
     public static UImanager Instance { get; private set; }
-    public UIbottom uibottom { get; private set; }
-    public UItop uitop { get; private set; }
+    [SerializeField] private UIbottom uibottom;
+    [SerializeField] private UItop uitop;
 
     private void Awake()
     {
@@ -16,12 +15,12 @@ public class UImanager : MonoBehaviour
 
     public void Init()
     {
-        uibottom = GetComponent<UIbottom>();
-        uitop = GetComponent<UItop>();
-
         uibottom.Init();
         uibottom.FillQuestPanel();
 
         uitop.SetHint();
     }
+
+    public UIbottom UIBottom { get { return uibottom; } }
+    public UItop UITop { get { return uitop; } }
 }

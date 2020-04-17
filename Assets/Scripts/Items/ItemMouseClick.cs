@@ -20,8 +20,8 @@ public class ItemMouseClick : MonoBehaviour
 
             LevelManager.Instance.RemoveQuestItem(gameObject);
             
-            UImanager.Instance.uibottom.ClearQuestPanel();
-            UImanager.Instance.uibottom.FillQuestPanel();
+            UImanager.Instance.UIBottom.ClearQuestPanel();
+            UImanager.Instance.UIBottom.FillQuestPanel();
 
             Debug.Log("клик квест");
             Destroy(gameObject);
@@ -35,7 +35,7 @@ public class ItemMouseClick : MonoBehaviour
             }
             else
             {
-                UImanager.Instance.uitop.Penalty();
+                UImanager.Instance.UITop.Penalty();
                 falseClick = false;
                 Debug.Log("штраф");
             }

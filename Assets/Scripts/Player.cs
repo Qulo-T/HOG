@@ -15,9 +15,7 @@ public class Player : MonoBehaviour
     void Awake()
     {
         Instance = this;
-    }
-    public void Start()
-    {
+
         hintMax = GameData.Instance.GetPlHintMax;
         hintCount = hintMax;
 

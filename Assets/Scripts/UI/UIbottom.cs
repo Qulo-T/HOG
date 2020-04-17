@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+[RequireComponent(typeof(UIBottomButton))]
 public class UIbottom : MonoBehaviour
 {
     [SerializeField] private GameObject textPrefab;
@@ -11,11 +12,13 @@ public class UIbottom : MonoBehaviour
     private LevelManager levelManager;
     private Player player;
     private List<GameObject> questItem;
-    public void Init()
+    private void Start()
     {
         levelManager = LevelManager.Instance;
         player = Player.Instance;
-
+    }
+    public void Init()
+    {
         questItem = levelManager.questItem;
     }
 

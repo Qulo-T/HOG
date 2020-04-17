@@ -37,7 +37,7 @@ public class LevelManager : MonoBehaviour
 
         levelItems = createItem.levelItems;
         Quest();
-     //   Player.Instance.Init();
+
         UImanager.Instance.Init();
     }
 
