@@ -23,12 +23,10 @@ public class ItemMouseClick : MonoBehaviour
             UImanager.Instance.UIBottom.ClearQuestPanel();
             UImanager.Instance.UIBottom.FillQuestPanel();
 
-            Debug.Log("клик квест");
             Destroy(gameObject);
         }
         else
         {
-            Debug.Log("клик");
             if (!falseClick)
             {
                 falseClick = true;
@@ -37,7 +35,6 @@ public class ItemMouseClick : MonoBehaviour
             {
                 UImanager.Instance.UITop.Penalty();
                 falseClick = false;
-                Debug.Log("штраф");
             }
         }
 

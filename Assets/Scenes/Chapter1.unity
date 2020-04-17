@@ -517,11 +517,11 @@ MonoBehaviour:
   levelsItem:
   - {fileID: 1888744836}
   lvlTimerSEC:
-  - 180
+  - 70
   lvlItemsCount: 0a000000
   lvlQuestCount: 03000000
   lvlEnergyStart: 07000000
-  plHintMax: 10
+  plHintMax: 2
   plEnergyMax: 100
   penaltyCount: 10
 --- !u!1 &211229058

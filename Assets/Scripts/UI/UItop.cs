@@ -48,6 +48,7 @@ public class UItop : MonoBehaviour
     public void Penalty()
     {
         time -= penaltyCount;
+
         GameObject penaltyView = Instantiate(penltyPrefab);
         penaltyView.transform.SetParent(gameObject.transform);
         penaltyView.transform.position = new Vector2(gameObject.transform.position.x, gameObject.transform.position.y - 30);
