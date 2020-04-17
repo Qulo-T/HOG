@@ -7,6 +7,7 @@ public class UItop : MonoBehaviour
 {
     [SerializeField] private Text timerText;
     [SerializeField] private Text hintText;
+    [SerializeField] private GameObject penltyPrefab;
 
     private float time;
     private float penaltyCount;
@@ -47,7 +48,9 @@ public class UItop : MonoBehaviour
     public void Penalty()
     {
         time -= penaltyCount;
-        //создание текст префаба
+        GameObject penaltyView = Instantiate(penltyPrefab);
+        penaltyView.transform.SetParent(gameObject.transform);
+        penaltyView.transform.position = new Vector2(gameObject.transform.position.x, gameObject.transform.position.y - 30);
     }
     public void Restart()
     {

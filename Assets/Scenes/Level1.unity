@@ -614,6 +614,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timerText: {fileID: 70562338}
   hintText: {fileID: 1652547734}
+  penltyPrefab: {fileID: 4932986198277223665, guid: c439d19440c690945948829cfb34e717,
+    type: 3}
 --- !u!1 &239161481
 GameObject:
   m_ObjectHideFlags: 0
