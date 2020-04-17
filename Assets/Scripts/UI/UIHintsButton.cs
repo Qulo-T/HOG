@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class UIBottomButton : MonoBehaviour
+public class UIHintsButton : MonoBehaviour
 {
     [SerializeField] private Hints hints;
     [SerializeField] private Button backLightButton;

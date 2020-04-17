@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-[RequireComponent(typeof(UIBottomButton))]
+[RequireComponent(typeof(UIHintsButton))]
 public class UIbottom : MonoBehaviour
 {
     [SerializeField] private GameObject textPrefab;
