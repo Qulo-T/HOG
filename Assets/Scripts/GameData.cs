@@ -5,17 +5,18 @@ using UnityEngine;
 public class GameData : MonoBehaviour
 {
     public static GameData Instance;
-    
+    [Header("config")]
+    [SerializeField] private XMLRead xml;
     [SerializeField] private bool useConfig;
 
     [Header("Levels")]
     [SerializeField, Tooltip("first = 0")] private int startLevel;
     [SerializeField] private GameObject[] levelsSpace;
     [SerializeField] private GameObject[] levelsItem;
-    [SerializeField] private float[] lvlTimerSEC; //cfg
-    [SerializeField] private int[] lvlItemsCount; //cfg, max item to be placed. Параметр К в ТЗ
-    [SerializeField] private int[] lvlQuestCount; //cfg, items to search, count.
-    [SerializeField] private int[] lvlEnergyStart; //cfg
+    [SerializeField] private List<float> lvlTimerSEC; //cfg
+    [SerializeField] private List<int> lvlItemsCount; //cfg, max item to be placed. Параметр К в ТЗ
+    [SerializeField] private List<int> lvlQuestCount; //cfg, items to search, count.
+    [SerializeField] private List<int> lvlEnergyStart; //cfg
 
     [Header("Player")]
     [SerializeField] private int plHintMax; //cfg
@@ -38,12 +39,17 @@ public class GameData : MonoBehaviour
 
     private void UseConfig()
     {
-        //timer
-        //itemCount
-        //QuestCount
-        //lvlEnergyStart
-        //plHintMax
-        //plEnergyMax
+        xml.Init();
+        xml.Load();
+
+        lvlTimerSEC = xml.lvlTimerSEC;
+        lvlItemsCount = xml.lvlItemsCount;
+        lvlQuestCount = xml.lvlQuestCount;
+        lvlEnergyStart = xml.lvlEnergyStart;
+
+        plHintMax = xml.plHintMax;
+        plEnergyMax = xml.plEnergyMax;
+        penaltyCount = xml.penaltyCount;
     }
     public void NextLevel()
     {

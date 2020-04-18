@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<GameData>
+  <Chapter0>
+    <level timer ="84" ItemCount ="12" QuestCount="4" Energy ="11">Level0</level>
+    <level timer ="90" ItemCount ="10" QuestCount="3" Energy ="7">Level1</level>
+  </Chapter0>
+  <Player>
+    <data Hints="4" Energy="56" Penalty="12"></data>
+  </Player>
+</GameData>

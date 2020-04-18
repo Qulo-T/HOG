@@ -449,7 +449,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 138715148}
-  - component: {fileID: 138715151}
   - component: {fileID: 138715149}
   - component: {fileID: 138715150}
   m_Layer: 0
@@ -498,32 +497,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe25564dfe3be37498afeac8a933e5c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &138715151
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 138715147}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3b36ede6e20307a469938d9004d40225, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  useConfig: 0
-  startLevel: 0
-  levelsSpace:
-  - {fileID: 239161481}
-  levelsItem:
-  - {fileID: 1888744836}
-  lvlTimerSEC:
-  - 70
-  lvlItemsCount: 0a000000
-  lvlQuestCount: 03000000
-  lvlEnergyStart: 07000000
-  plHintMax: 2
-  plEnergyMax: 100
-  penaltyCount: 10
 --- !u!1 &211229058
 GameObject:
   m_ObjectHideFlags: 0
@@ -2337,6 +2310,78 @@ Transform:
   m_Father: {fileID: 1324979175}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1103228163
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1103228165}
+  - component: {fileID: 1103228164}
+  - component: {fileID: 1103228166}
+  m_Layer: 0
+  m_Name: GameData
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1103228164
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1103228163}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e88a2a6a134f337429acba4afd16891f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fileName: DataBase.xml
+--- !u!4 &1103228165
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1103228163}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 383.15796, y: 307.2511, z: 115.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1103228166
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1103228163}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b36ede6e20307a469938d9004d40225, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  xml: {fileID: 1103228164}
+  useConfig: 1
+  startLevel: 0
+  levelsSpace:
+  - {fileID: 239161481}
+  levelsItem:
+  - {fileID: 1888744836}
+  lvlTimerSEC:
+  - 70
+  lvlItemsCount: 0a000000
+  lvlQuestCount: 03000000
+  lvlEnergyStart: 07000000
+  plHintMax: 2
+  plEnergyMax: 100
+  penaltyCount: 10
 --- !u!1001 &1196866534
 PrefabInstance:
   m_ObjectHideFlags: 0
