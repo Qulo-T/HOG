@@ -1243,7 +1243,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 2069480452}
-        m_MethodName: OpenMenu
+        m_MethodName: MenuButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3864,6 +3864,7 @@ GameObject:
   - component: {fileID: 1936055417}
   - component: {fileID: 1936055418}
   - component: {fileID: 1936055419}
+  - component: {fileID: 1936055420}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -3909,6 +3910,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4bde5ec5c52e674993e99e29bf4fc49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1936055420
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1936055416}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b02773a8ae37511408b4d13bfabd45b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  uIMenuButton: {fileID: 2069480452}
 --- !u!1 &2023818874
 GameObject:
   m_ObjectHideFlags: 0

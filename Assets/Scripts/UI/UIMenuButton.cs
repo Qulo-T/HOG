@@ -17,6 +17,17 @@ public class UIMenuButton : MonoBehaviour
     {
         energyReq = GameData.Instance.GetEnergyStart;
     }
+    public void MenuButton()
+    {
+        if (menuPanel.activeSelf)
+        {
+            Resume();
+        }
+        else
+        {
+            OpenMenu();
+        }
+    }
     public void OpenMenu()
     {
         menuPanel.SetActive(true);
