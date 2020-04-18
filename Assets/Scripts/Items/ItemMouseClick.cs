@@ -24,6 +24,8 @@ public class ItemMouseClick : MonoBehaviour
             UImanager.Instance.UIBottom.FillQuestPanel();
 
             Destroy(gameObject);
+
+            SoundManager.Instance.QuestClick();
         }
         else
         {
@@ -34,6 +36,7 @@ public class ItemMouseClick : MonoBehaviour
             else
             {
                 UImanager.Instance.UITop.Penalty();
+                SoundManager.Instance.FalseClick();
                 falseClick = false;
             }
         }

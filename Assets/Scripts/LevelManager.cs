@@ -87,6 +87,8 @@ public class LevelManager : MonoBehaviour
         }
         else
         {
+           
+            SoundManager.Instance.TimeOut();
             UImanager.Instance.UIMenu.GameOver(false);
         }
     }

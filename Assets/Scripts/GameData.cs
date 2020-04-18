@@ -51,15 +51,6 @@ public class GameData : MonoBehaviour
         plEnergyMax = xml.plEnergyMax;
         penaltyCount = xml.penaltyCount;
     }
-    public void NextLevel()
-    {
-        //Проверка есть ли все необходимое для след уровня!
-        currentLevel++;
-    }
-    public void RestartLvl()
-    {
-        currentLevel = startLevel;
-    }
     public List<GameObject> GetLvlSpaces
     {
         get
