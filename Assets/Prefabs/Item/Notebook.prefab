@@ -146,6 +146,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4172469280333800442}
     m_Modifications:
+    - target: {fileID: -7924322451399677892, guid: 214963e6799b5e74d93b3d9184a84497,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a5c68ad37f6bb80419cef1f405070b89, type: 2}
+    - target: {fileID: -7924322451399677892, guid: 214963e6799b5e74d93b3d9184a84497,
+        type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: a5c68ad37f6bb80419cef1f405070b89, type: 2}
+    - target: {fileID: -7924322451399677892, guid: 214963e6799b5e74d93b3d9184a84497,
+        type: 3}
+      propertyPath: m_Materials.Array.data[2]
+      value: 
+      objectReference: {fileID: 2100000, guid: 474452e567714c345831c17b4766fa1a, type: 2}
     - target: {fileID: -4216859302048453862, guid: 214963e6799b5e74d93b3d9184a84497,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -201,11 +216,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -4056912749041130717, guid: 214963e6799b5e74d93b3d9184a84497,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: efa297ed5ab6a7e429adf98324c1a406, type: 2}
+    - target: {fileID: -1222293002006155490, guid: 214963e6799b5e74d93b3d9184a84497,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 474452e567714c345831c17b4766fa1a, type: 2}
     - target: {fileID: -927199367670048503, guid: 214963e6799b5e74d93b3d9184a84497,
         type: 3}
       propertyPath: m_Name
       value: Notebook Toshiba Satellite l655-1d7 N051118
       objectReference: {fileID: 0}
+    - target: {fileID: 6589796646589967282, guid: 214963e6799b5e74d93b3d9184a84497,
+        type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 5bbe2a31a1915d945914e0ed7c9803a2, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 214963e6799b5e74d93b3d9184a84497, type: 3}
 --- !u!4 &8200080318945717176 stripped

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(ItemMouseClick))]
+[RequireComponent(typeof(ItemMouseClick), typeof(Light))]
 public class Item : MonoBehaviour
 {
     [SerializeField] private string _name;

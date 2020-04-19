@@ -5,11 +5,16 @@ using UnityEngine.UI;
 
 public class UIHintsButton : MonoBehaviour
 {
+    public static UIHintsButton Instance;
+
     [SerializeField] private Hints hints;
     [SerializeField] private Button backLightButton;
 
     private Player player;
-
+    private void Awake()
+    {
+        Instance = this;
+    }
     private void Start()
     {
         player = Player.Instance;
@@ -33,7 +38,11 @@ public class UIHintsButton : MonoBehaviour
         {
             backLightButton.interactable = false;
         }
+    }
 
+    public void Restart()
+    {
+        backLightButton.interactable = true;
     }
 
 }

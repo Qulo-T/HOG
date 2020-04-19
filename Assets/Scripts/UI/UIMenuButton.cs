@@ -48,16 +48,18 @@ public class UIMenuButton : MonoBehaviour
     }
     public void Restart()
     {
-            Player.Instance.DecreaseEnergy(energyReq);
-            Player.Instance.SetHints();
-            
-            UImanager.Instance.UITop.Restart();
-            UImanager.Instance.UIBottom.ClearQuestPanel();
+        Player.Instance.DecreaseEnergy(energyReq);
+        Player.Instance.SetHints();
 
-            LevelManager.Instance.Restart();
+        UImanager.Instance.UITop.Restart();
+        UImanager.Instance.UIBottom.ClearQuestPanel();
 
-            resumeButton.SetActive(true);
-            Resume();
+        LevelManager.Instance.Restart();
+
+        UIHintsButton.Instance.Restart();
+
+        resumeButton.SetActive(true);
+        Resume();
     }
     public void ExitToMenu()
     {
